@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Machinima Test Scenes</title>
+    <style>
+      html {
+        background: #33425B;
+        color: #FAFAFA;
+        font-family: sans-serif;
+        font-size: 20px;
+        padding: 10px 20px;
+      }
+      h1 {
+        font-weight: 300;
+        font-family: serif;
+      }
+      a {
+        color: #FAFAFA;
+      }
+      a.example {
+        padding: 15px 0;
+        font-size: 24px;
+      }
+      code, pre {
+        font-family: monospace;
+        background-color: #3f506d;
+        color: #BBB;
+      }
+      .unemph {
+        font-size: smaller;
+        color: #BBB;
+      }
+     </style>
+  </head>
+  <body>
+    <h1>Machinima Test Scenes</h1>
+    <a id="hands" class="example" href="hands.html">Basic Example with super-hands</a>
+    <p>Create html files in this directory for the scenes you want to use
+      in machinima testing. Don't use <code>script</code> tags in the 
+      <code>head</code> or <code>body</code> tags because they won't be included
+      with
+      the <code>a-scene</code> when it is injected into the test enviroment. 
+      Instead, include any external components/dependencies by 
+      <code>require</code>-ing them in <code>machinima_tests/main.js</code>.
+    </p>
+    <p>
+      Once in the scene, press space to start and end recording. Save the
+      downloaded json file to <code>machinima_tests/recordings</code> and 
+      load it in the corresponding test script. 
+    </p>
+
+  </body>
+</html>

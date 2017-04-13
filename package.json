@@ -1,0 +1,51 @@
+{
+  "name": "aframe-machinima-testing",
+  "version": "0.0.1",
+  "description": "Automated testing using motion-captured user interactions",
+  "main": "index.js",
+  "scripts": {
+    "record": "budo machinima_tests/main.js:build.js --dir machinima_tests/scenes --port 8000 --live --open",
+    "test:machinima": "karma start ./machinima_tests/karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmurphyrd/aframe-machinima-tesing/"
+  },
+  "keywords": [
+    "aframe",
+    "aframe-vr",
+    "vr",
+    "mozvr",
+    "webvr",
+    "test",
+    "motion capture",
+    "mocap"
+  ],
+  "author": "William Murphy william@datatitian.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wmurphyrd/aframe-machinima-tesing/issues"
+  },
+  "homepage": "https://github.com/wmurphyrd/aframe-super-hands-component#readme",
+  "devDependencies": {
+    "aframe": "^0.5.0",
+    "aframe-extras": "^3.3.4",
+    "aframe-motion-capture-components": "^0.1.4",
+    "browserify": "^13.0.0",
+    "budo": "^8.2.2",
+    "chai": "^3.5.0",
+    "karma": "^1.4.0",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-env-preprocessor": "^0.1.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-html2js-preprocessor": "^1.1.0",
+    "karma-mocha": "^1.1.1",
+    "karma-mocha-reporter": "^2.1.0",
+    "karma-sinon-chai": "^1.2.4",
+    "mocha": "^3.0.2",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.8.0",
+    "super-hands": "^0.3.1"
+  }
+}
