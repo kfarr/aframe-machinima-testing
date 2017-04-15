@@ -65,3 +65,14 @@ Here are the key configuration options that make this work:
 ### package.json
 
 * scipts: record and test:machina
+
+## Notes and Issues
+
+* Firefox Nightly compatibility issue: this setup works with release versions of Chrome and Firefox 
+  as well Chromium WebVR, and they can all be run concurently without issues.
+  Firefox Nightly will run the machinima tests correctly at first, but fails when re-running
+  is triggered by Karma due to updated files
+* A separate workflow for recording: initially, I had planned to the recording step to be completed 
+  from within a Karma debug window. This would help ensure the recording and testing environments 
+  were identical. Unfortunately, I could not get the tracked controllers to register under these conditions.
+  
