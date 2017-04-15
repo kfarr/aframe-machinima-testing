@@ -1,8 +1,7 @@
 /* global assert, process, setup, suite, test */
 
-// change these variables to name your scene and recording files
-var SCENE_FILE = 'hands.html',
-    RECORDING_FILE = 'handsRecording.json';
+// One scene per suite, but recordings set at the test level
+var SCENE_FILE = 'hands.html';
 
 suite('example machinima test', function () {
   this.timeout(0); // disable Mocha timeout within tests
@@ -11,11 +10,10 @@ suite('example machinima test', function () {
     var body = document.querySelector('body'),
         sceneReg =  /<a-scene[^]+a-scene>/,
         sceneResult = sceneReg.exec(window.__html__[SCENE_FILE]),
-        recorderReg = /avatar-recorder(=".*")?/,
-        recordingPath = 'base/recordings/' + RECORDING_FILE;
+        recorderReg = /avatar-recorder(=".*")?/;
     // set avatar-replayer to use the specified recoring file
     sceneResult = sceneResult[0]
-      .replace(recorderReg, 'avatar-replayer="src:' + recordingPath + '"');
+      .replace(recorderReg, 'avatar-replayer');
     body.innerHTML = sceneResult + body.innerHTML;
     this.scene = document.querySelector('a-scene');
     this.scene.addEventListener('loaded', e => {
@@ -25,6 +23,9 @@ suite('example machinima test', function () {
   test('green boxes turn into spheres', function (done) {
     var boxGreenTop = document.getElementById('greenHigh'),
         boxGreenBottom = document.getElementById('greenLow');
+    this.scene.setAttribute('avatar-replayer', { 
+      src: 'base/recordings/handsRecording.json' 
+    });
     assert.equal(boxGreenTop.getAttribute('geometry').primitive, 'box');
     assert.equal(boxGreenBottom.getAttribute('geometry').primitive, 'box');
     this.scene.addEventListener('replayingstopped', e => {
@@ -36,7 +37,10 @@ suite('example machinima test', function () {
   test('red box is stretched & moved', function (done) {
     var redBox = document.getElementById('redHigh'),
         startPos = redBox.getAttribute('position'),
-        startScale = redBox.getAttribute('scale')
+        startScale = redBox.getAttribute('scale');
+    this.scene.setAttribute('avatar-replayer', { 
+      src: 'base/recordings/handsRecording.json' 
+    });
     this.scene.addEventListener('replayingstopped', e => {
       var endScale = redBox.getAttribute('scale');
       assert.notDeepEqual(redBox.getAttribute('position'), startPos, 'moved');

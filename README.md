@@ -8,6 +8,11 @@ development workflow using the
 in a [Karma](https://karma-runner.github.io/1.0/index.html)/[Mocha](https://mochajs.org/) 
 testing framework.
 
+## News
+
+* Changed specification of the recording file to be at the test level, so a suite
+  can run tests against multiple recording files for a scene
+
 ## Workflow
 
 1. Create an HTML A-Frame scene for testing in `machinima_testing/scenes/` 
@@ -24,8 +29,8 @@ testing framework.
 The `setup` function in the example test file in this repo will read the
 `a-scene` from your test scene file, modify it to play back your recording, 
 and inject it into the Karma test environment. All you need to do is specify 
-the filenames for the scene and recording files you want to use in the suite
-in the global variables at the top of the file.
+scene file in the global variables at the top of the file and the recording files
+for each test where the `src` attribute of `avatar-recorder` is set on the scene.
 
 <strong>Including components and Dependencies:</strong> As the script only
 injects the `a-scene` element and its contents, `script` tags in the `head` or
