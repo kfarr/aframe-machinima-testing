@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wmurphyrd/aframe-machinima-tesing/"
+    "url": "git+https://github.com/wmurphyrd/aframe-machinima-testing/"
   },
   "keywords": [
     "aframe",
@@ -24,7 +24,7 @@
   "author": "William Murphy william@datatitian.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wmurphyrd/aframe-machinima-tesing/issues"
+    "url": "https://github.com/wmurphyrd/aframe-machinima-testing/issues"
   },
   "homepage": "https://github.com/wmurphyrd/aframe-super-hands-component#readme",
   "devDependencies": {
